@@ -5,6 +5,7 @@ import Home from './pages/home/home.jsx'
 import Cart from './pages/cart/cart.jsx'
 import PlaceOrder from './pages/placeOrder/placeOrder.jsx';
 import Footer from './components/Footer/footer.jsx';
+import AppDownload from './components/AppDownload/AppDownload.jsx';
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
       <Route path='/cart' element={<Cart/>}/>
       <Route path='/placeOrder' element={<PlaceOrder/>}/>
       </Routes>
+      <AppDownload/>
     </div>
     <Footer/>
     </>

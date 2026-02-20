@@ -16,14 +16,14 @@ function Footer() {
             </div>
         </div>
         <div className="footer-content-center">
-            <h2>COMPANY</h2>
+            <h3>COMPANY</h3>
             <ul><li>HOME</li>
             <li>ABOUT US</li>
             <li>DELIVERY</li>
             <li>PRIVACY POLICY</li></ul>
         </div>
         <div className="footer-content-right">
-            <h2>GET IN TOUCH</h2>
+            <h3>GET IN TOUCH</h3>
             <ul>
                 <li>+91-999-232-3443</li>
                 <li>contact@tomato.com</li>
