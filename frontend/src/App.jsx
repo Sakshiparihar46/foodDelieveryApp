@@ -5,7 +5,6 @@ import Home from './pages/home/home.jsx'
 import Cart from './pages/cart/cart.jsx'
 import PlaceOrder from './pages/placeOrder/placeOrder.jsx';
 import Footer from './components/Footer/footer.jsx';
-import AppDownload from './components/AppDownload/AppDownload.jsx';
 import LoginPopup from './components/LoginPopup/Loginpopup.jsx';
 function App() {
 
@@ -18,9 +17,8 @@ function App() {
       <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/cart' element={<Cart/>}/>
-      <Route path='/placeOrder' element={<PlaceOrder/>}/>
+      <Route path='/order' element={<PlaceOrder/>}/>
       </Routes>
-      <AppDownload/>
     </div>
     <Footer/>
     </>
