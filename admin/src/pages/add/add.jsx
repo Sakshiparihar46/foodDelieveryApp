@@ -23,9 +23,23 @@ function Add() {
         <div className="add-category-price">
           <div className="add-category flex-col">
             <p>product category</p>
-            <select name="" id=""></select>
+            <select name="category" >
+              <option value="Salad">Salad</option>
+              <option value="Rolls">Rolls</option>
+              <option value="Desert">Desert</option>
+              <option value="Sandwich">Sandwich</option>
+              <option value="Cake">Cake</option>
+              <option value="Pure Veg">Pure Veg</option>
+              <option value="Pasta">Pasta</option>
+              <option value="Noodles">Noodles</option>
+            </select>
+          </div>
+          <div className="add-price flex-col">
+            <p>product price</p>
+            <input type="number" name='price' placeholder='$20'/>
           </div>
         </div>
+        <button type='submit' className='add-btn' >ADD</button>
       </form>
     </div>
   )
