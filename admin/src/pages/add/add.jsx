@@ -16,7 +16,7 @@ function Add() {
           <p>product name</p>
           <input type="text" name="name" placeholder='type-here'/>
         </div>
-        <div className="add product-description flex-col">
+        <div className="add-product-description flex-col">
         <p>product-descripton</p>
         <textarea name="description" rows="6" placeholder='write content here'required></textarea>
         </div>
