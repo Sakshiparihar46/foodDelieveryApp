@@ -8,6 +8,10 @@ const loginUser = async (req, res) => {
  
 };
 
+//token
+const createToken=(id)=>{
+    return jwt.sign({id},process.env.JWT_SECRET)
+}
 // register user
 const registerUser = async (req, res) => {
     const {name,password,email}=req.body;
@@ -28,6 +32,18 @@ const registerUser = async (req, res) => {
        if(password.length<8){
         return res.json({success:false,meassage:"please enter the strong password"});
        }
+
+       //hashing
+       const salt=await bcrypt.genSalt(10);
+       const hashedPassword=await bcrypt.hash(password,salt);
+
+       const newUser=new userModel({
+        name:name,
+        email:email,
+        password:hashedPassword
+       })
+
+      const user= await newUser.save();
     }catch(err){
         console.log(err);
     }
