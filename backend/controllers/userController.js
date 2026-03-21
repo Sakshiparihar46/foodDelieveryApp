@@ -18,7 +18,7 @@ const registerUser = async (req, res) => {
     try{
 
         //checking email is in the database or not
-       const exists=await userModel.findOne({email}) ;
+       const exists=await userModel.findOne({name}) ;
        if(exists){
         return res.json({success:false,message:"User already exists"});
        }
@@ -48,6 +48,7 @@ const registerUser = async (req, res) => {
       res.json({success:true,token});
     }catch(err){
         console.log(err);
+        res.json({success:false,message:"error"});
     }
   };
 
