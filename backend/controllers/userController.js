@@ -18,9 +18,9 @@ const registerUser = async (req, res) => {
     try{
 
         //checking email is in the database or not
-       const exists=await userModel.findOne({name}) ;
+       const exists=await userModel.findOne({email}) ;
        if(exists){
-        return res.json({success:false,message:"User already exists"});
+        return res.json({success:false,message:"email is already registered"});
        }
 
        //validation for email format & strong password
@@ -30,7 +30,7 @@ const registerUser = async (req, res) => {
        }
 
        if(password.length<8){
-        return res.json({success:false,meassage:"please enter the strong password"});
+        return res.json({success:false,message:"please enter the strong password"});
        }
 
        //hashing
