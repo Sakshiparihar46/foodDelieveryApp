@@ -1,6 +1,7 @@
 import React,{useContext, useState} from 'react';
 import './placeorder.css';
 import { StoreContext } from '../../context/context.jsx';
+import axios from "axios";
 const PlaceOrder = () => {
   const {getTotalcartAmount,token,food_list,cartItems,url}=useContext(StoreContext);
 
@@ -27,6 +28,18 @@ const PlaceOrder = () => {
       orderItems.push(itemInfo);
     }
    })
+   let orderData={
+    address:data,
+    items:orderItems,
+    amount:getTotalcartAmount()===0?0:getTotalcartAmount()+2,
+   }
+   let response=await axios.post(url+"/api/order/place",orderData,{headers:{token}});
+   if(response.data.success){
+    const {session_url}=response.data;
+    window.location.replace(session_url);
+   }else{
+    alert("error");
+   }
   }
 
   const onChangeHandler=(event)=>{

@@ -1,7 +1,8 @@
 import orderModel from "../models/OrderModel.js";  
 import userModel from "../models/userModel.js";
 import  Stripe  from 'stripe';
-
+import dotenv from "dotenv";
+dotenv.config();
 const stripe =new Stripe(process.env.STRIPE_SECRET_KEY);
 
 //placing user Order 
@@ -9,7 +10,7 @@ const placeOrder=async (req,res)=>{
     const frontend_url="http://localhost:5173";
     try{
         const newOrder=new orderModel({
-            userId:req.boy.userId,
+            userId:req.body.userId,
             items:req.body.items,
             amount:req.body.amount,
             address:req.body.address
@@ -25,7 +26,7 @@ const placeOrder=async (req,res)=>{
                 },
                 unit_amount:item.price*100*80
             },
-            quality:item.quality
+            quantity:item.quantity
         }))
 
         line_items.push({
@@ -39,7 +40,7 @@ const placeOrder=async (req,res)=>{
             quantity:1
         })
 
-        const session=await stripe.checkout.session.create({
+        const session=await stripe.checkout.sessions.create({
             line_items:line_items,
             mode:"payment",
             success_url:`${frontend_url}/verify?success=true&orderId=${newOrder._id}`,
