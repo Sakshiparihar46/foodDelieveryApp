@@ -27,8 +27,6 @@ const PlaceOrder = () => {
       orderItems.push(itemInfo);
     }
    })
-   console.log(orderItems);
-   
   }
 
   const onChangeHandler=(event)=>{
@@ -85,4 +83,4 @@ const PlaceOrder = () => {
   )
 }
 
-export default PlaceOrder
+export default PlaceOrder;
