@@ -2,6 +2,8 @@ import express from 'express'
 import cors from 'cors'
 import { connectDB }from"./config/db.js";
 import foodRouter from './Routes/foodRoute.js';
+import dotenv from "dotenv";
+dotenv.config();
 import userRouter from './Routes/userRoute.js';
 import cartRouter from './Routes/cartRoute.js';
 import orderRouter from './Routes/orderRoute.js';
@@ -31,3 +33,4 @@ app.get("/",(req,res)=>{
 app.listen(port,()=>{
     console.log(`server is listening on port${port}`);
 });
+
