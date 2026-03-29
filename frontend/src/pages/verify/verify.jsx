@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext,useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { StoreContext } from '../../context/context';
 import './verify.css'
@@ -17,8 +17,12 @@ function Verify() {
         if(response.data.success){
             navigate("/myorders");
         }else{
-            navigate("/")
+            navigate("/");
         }}
+
+        useEffect(()=>{
+          verifyPayment();
+        },[])
   return (
     <div className='verify'>
       <div className="spinner">
