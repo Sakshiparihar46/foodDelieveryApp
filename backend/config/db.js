@@ -1,5 +1,7 @@
+import dotenv from "dotenv";
+dotenv.config();
 import mongoose from 'mongoose';
-
+const db=process.env.MONGO_URL;
 export const connectDB=async()=>{
-    await mongoose.connect('mongodb+srv://sakshiparihargdg24:OzFP7Oq5nusosXB8@cluster0.fzdq7xw.mongodb.net/?appName=Cluster0').then(()=>{console.log("database is connected")})
+    await mongoose.connect(db).then(()=>{console.log("database is connected")})
 }
