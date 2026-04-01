@@ -7,7 +7,7 @@ import PlaceOrder from './pages/placeOrder/placeOrder.jsx';
 import Footer from './components/Footer/footer.jsx';
 import LoginPopup from './components/LoginPopup/Loginpopup.jsx';
 import Verify from './pages/verify/verify.jsx';
-import MyOrders from './pages/Myorders/myOrders.jsx';
+import MyOrders from './pages/myorders/myOrders.jsx';
 function App() {
 
   const [showLogin,setShowLogin]=useState(false);
