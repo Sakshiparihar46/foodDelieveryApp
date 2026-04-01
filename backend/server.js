@@ -10,12 +10,14 @@ import orderRouter from './Routes/orderRoute.js';
 
 
 const app=express();
-let port=3000;
+const port = process.env.PORT || 3000;
 
 // body parsers for POST data
 app.use(express.json());// parse application/json
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors({
+  origin: "*", 
+}));
 
 //db connection
 connectDB();
