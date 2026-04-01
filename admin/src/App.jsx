@@ -6,7 +6,7 @@ import List from './pages/list/list.jsx'
 import Orders from './pages/orders/orders.jsx'
 import { ToastContainer, toast } from 'react-toastify';
 function App() {
-  const url="http://localhost:3000"
+  const url="https://fooddelieveryapp-s1jk.onrender.com"
 
   return (
     <>
