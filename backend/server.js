@@ -17,7 +17,8 @@ app.use(express.json());// parse application/json
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
   origin:[ "https://food-delievery-app-cmfj.vercel.app",
-           "https://food-delievery-app-o7w1.vercel.app"
+           "https://food-delievery-app-o7w1.vercel.app",
+           "https://food-delievery-app-j5hq.vercel.app"
   ], 
   credentials: true
 }));
