@@ -19,7 +19,7 @@ app.use(cors({
   origin:[ "https://food-delievery-app-cmfj.vercel.app",
            "https://food-delievery-app-o7w1.vercel.app",
            "https://food-delievery-app-j5hq.vercel.app",
-           "https://food-delievery-app-p3jw.vercel.app"
+           "https://food-delievery-app-p3jw.vercel.app/"
   ], 
   credentials: true
 }));
